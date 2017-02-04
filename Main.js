@@ -19,7 +19,6 @@ import EventDetailsPage from './EventDetailsPage';
 import AttendeeProfilePage from './AttendeeProfilePage';
 import IconIon from 'react-native-vector-icons/Ionicons';
 
-
 export default class Login extends Component {
   constructor () {
     super()
@@ -48,16 +47,16 @@ export default class Login extends Component {
           renderSelectedIcon={() => <IconIon name='ios-list' size={35} style={{color:"#1DBB96"}}/>}
           onPress={() => this.changeTab('feed')}>
 
-          <Navigator 
-            initialRoute={{id:"EventPage",name:"Event Page"}}
-            renderScene={this.renderScene.bind(this)}
-            configureScene={(route) => {
-                if (route.sceneConfig) {
-                  return route.sceneConfig;
-                }
-                return Navigator.SceneConfigs.FloatFromRight;
-              }}
-            ></Navigator>
+          // <Navigator
+          //   initialRoute={{id:"EventPage",name:"Event Page"}}
+          //   renderScene={this.renderScene.bind(this)}
+          //   configureScene={(route) => {
+          //       if (route.sceneConfig) {
+          //         return route.sceneConfig;
+          //       }
+          //       return Navigator.SceneConfigs.FloatFromRight;
+          //     }}
+          //   ></Navigator>
         </Tab>
         <Tab
           titleStyle={{marginTop:-5,color:"#bdc3c7"}}
@@ -73,44 +72,46 @@ export default class Login extends Component {
     );
   }
 
-  renderScene(route, navigator) {
-    var routeId = route.id;
-
-    if (routeId === 'EventPage') {
-      return (
-         <EventPage
-          navigator={navigator}
-          something="something"
-          style={{backgroundColor:"#1DBB96"}}></EventPage>
-      )
-    }
 
 
-
-    if (routeId === 'EventDetailsPage') {
-      return (
-         <EventDetailsPage
-            navigator={navigator}
-            event={route.event}/>
-      )
-    } 
-
-    if (routeId === 'ScannerPage'){
-      return(
-        <Scanner
-          navigator={navigator
-        }></Scanner>
-      )
-    }
-
-    if(routeId === 'AttendeeProfilePage'){
-      return(
-        <AttendeeProfilePage
-          navigator={navigator}>
-        </AttendeeProfilePage>
-      )
-    }   
-  }
+  // renderScene(route, navigator) {
+  //   var routeId = route.id;
+  //
+  //   if (routeId === 'EventPage') {
+  //     return (
+  //        <EventPage
+  //         navigator={navigator}
+  //         something="something"
+  //         style={{backgroundColor:"#1DBB96"}}></EventPage>
+  //     )
+  //   }
+  //
+  //
+  //
+  //   if (routeId === 'EventDetailsPage') {
+  //     return (
+  //        <EventDetailsPage
+  //           navigator={navigator}
+  //           event={route.event}/>
+  //     )
+  //   }
+  //
+  //   if (routeId === 'ScannerPage'){
+  //     return(
+  //       <Scanner
+  //         navigator={navigator
+  //       }></Scanner>
+  //     )
+  //   }
+  //
+  //   if(routeId === 'AttendeeProfilePage'){
+  //     return(
+  //       <AttendeeProfilePage
+  //         navigator={navigator}>
+  //       </AttendeeProfilePage>
+  //     )
+  //   }
+  // }
 }
 
 const styles = StyleSheet.create({

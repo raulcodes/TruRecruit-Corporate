@@ -16,8 +16,9 @@ import ActionButton from 'react-native-action-button';
 import BackButton from './BackButton';
 import Navbar from './Navbar';
 
-var Modal   = require('react-native-modalbox');
+import { Actions } from 'react-native-router-flux';
 
+var Modal = require('react-native-modalbox');
 
 import{
 	FormLabel,FormInput
@@ -162,12 +163,14 @@ export default class EventPage extends Component
 	}
 
 	_goToAddEventPage(){
-		this.props.navigator.push({
-			id:"AddEventPage",
-			name:"Add Event Page",
-			events: this.state.events,
-			onAddEventPop: this._handleAddEventPop.bind(this)
-		})
+
+		Actions.AddEventPage;
+		// this.props.navigator.push({
+		// 	id:"AddEventPage",
+		// 	name:"Add Event Page",
+		// 	events: this.state.events,
+		// 	onAddEventPop: this._handleAddEventPop.bind(this)
+		// })
 	}
 }
 

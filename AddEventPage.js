@@ -25,6 +25,7 @@ import Navbar from './Navbar';
 
 import dismissKeyboard from 'react-native-dismiss-keyboard';
 
+import { Actions } from 'react-native-router-flux';
 
 var moment = require('moment');
 

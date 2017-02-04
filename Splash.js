@@ -15,6 +15,8 @@ import{
   FormLabel,FormInput
 } from 'react-native-elements';
 
+import { Actions } from 'react-native-router-flux';
+
 export default class Splash extends Component {
 
   _handlePress() {
@@ -25,7 +27,7 @@ export default class Splash extends Component {
     return (
       <View style={styles.container}>
         <Image source={require('./img/scanner.png')} style={styles.picture}/>
-        
+
         <View
         >
           <FormLabel>Email</FormLabel>
@@ -48,7 +50,7 @@ export default class Splash extends Component {
 
         <View style={{flexDirection:'row','justifyContent':'center'}}>
           <View style={{'flexDirection':'row'}}>
-            <Text style={{color:"#FFF"}}>Don't have an account?</Text>
+            <Text style={{color:"#FFF"}}>Dont have an account?</Text>
             <TouchableOpacity
               onPress={() => this.props.navigator.push({
                 id:'SignupPage'
@@ -58,25 +60,27 @@ export default class Splash extends Component {
             </TouchableOpacity>
           </View>
         </View>
-       
+
       </View>
     );
   }
 
   gotoEvent() {
-    this.props.navigator.push({
-      id: 'EventPage',
-      name: 'Login',
-    });
+    Actions.Event;
+    // this.props.navigator.push({
+    //   id: 'EventPage',
+    //   name: 'Login',
+    // });
   }
 
 
 
   gotoSignup() {
-    this.props.navigator.push({
-      id: 'SignupPage',
-      name: 'Sign Up',
-    });
+    Actions.Signup;
+    // this.props.navigator.push({
+    //   id: 'SignupPage',
+    //   name: 'Sign Up',
+    // });
   }
 }
 
